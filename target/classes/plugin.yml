@@ -1,0 +1,5 @@
+name: ChatFilter
+version: '1.0-SNAPSHOT'
+
+main: dev.gomez.java.ChatFilter
+api-version: '26.1'
