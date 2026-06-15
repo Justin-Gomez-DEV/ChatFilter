@@ -1,5 +1,5 @@
 name: ChatFilter
 version: '${version}'
 
-main: dev.gomez.java.ChatFilter
+main: dev.gomez.ChatFilter
 api-version: '26.1'
