@@ -26,6 +26,7 @@ public class CFEvent implements Listener {
         char previous = '\0';
 
         for (char c : input.toCharArray()) {
+
             if (c == previous) {
                 continue;
             }
@@ -44,8 +45,7 @@ public class CFEvent implements Listener {
         for (String badWord : badWords) {
             if (message.contains(normalize(badWord))) {
                 event.setCancelled(true);
-                event.getPlayer().sendMessage(
-                        "[" + ChatColor.RED + "!" + ChatColor.GRAY + "] Your message wasn't sent because it contained a blacklisted word: " + ChatColor.RED + badWord);
+                event.getPlayer().sendMessage("[" + ChatColor.RED + "!" + ChatColor.GRAY + "] Your message wasn't sent because it contained a blacklisted word: " + ChatColor.RED + badWord);
                 break;
             }
         }
