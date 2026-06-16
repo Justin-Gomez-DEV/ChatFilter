@@ -19,35 +19,20 @@ public class CFEvent implements Listener {
         this.badWords = badWords;
     }
 
-    private String normalize(String input) {
-        input = input.toLowerCase(Locale.ROOT);
-
-        StringBuilder result = new StringBuilder();
-        char previous = '\0';
-
-        for (char c : input.toCharArray()) {
-
-            if (c == previous) {
-                continue;
-            }
-
-            result.append(c);
-            previous = c;
-        }
-
-        return result.toString();
-    }
 
     @EventHandler
     public void onPlayerChat(AsyncPlayerChatEvent event) {
-        String message = normalize(event.getMessage());
 
-        for (String badWord : badWords) {
-            if (message.contains(normalize(badWord))) {
+        String message = event.getMessage().toLowerCase(Locale.ROOT);
+
+        for(String badWord : badWords){
+            if (message.contains(badWord.toLowerCase(Locale.ROOT))) {
                 event.setCancelled(true);
                 event.getPlayer().sendMessage("[" + ChatColor.RED + "!" + ChatColor.GRAY + "] Your message wasn't sent because it contained a blacklisted word: " + ChatColor.RED + badWord);
                 break;
             }
         }
+
     }
+
 }
