@@ -1,4 +1,4 @@
-package dev.gomez;
+package dev.gomez.chatfilter;
 
 import org.bukkit.ChatColor;
 import org.bukkit.event.EventHandler;

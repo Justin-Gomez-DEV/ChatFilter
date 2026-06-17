@@ -1,4 +1,4 @@
-package dev.gomez;
+package dev.gomez.chatfilter;
 
 import org.bukkit.plugin.java.JavaPlugin;
 import java.util.List;
